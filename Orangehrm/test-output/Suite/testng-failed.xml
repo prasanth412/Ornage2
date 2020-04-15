@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <listeners>
+    <listener class-name="com.htc.orange.listeners.ExtentReportListener"/>
+  </listeners>
+  <test name="Test(failed)" parallel="methods">
+    <classes>
+      <class name="com.htc.orange.testcases.AdminTest">
+        <methods>
+          <include name="T002_DashBoardTest"/>
+          <include name="setup"/>
+          <include name="T001_loginPageTest"/>
+          <include name="T004_searchUserTest" invocation-numbers="0"/>
+          <include name="T003_addUserTest" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.htc.orange.testcases.AdminTest -->
+      <class name="com.htc.orange.testcases.Login">
+        <methods>
+          <include name="PimPageTest"/>
+          <include name="assignPageTest"/>
+          <include name="setup"/>
+          <include name="DashBoardTest"/>
+          <include name="loginPageTest"/>
+        </methods>
+      </class> <!-- com.htc.orange.testcases.Login -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
