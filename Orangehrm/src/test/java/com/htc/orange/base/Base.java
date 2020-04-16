@@ -14,12 +14,17 @@ import com.htc.orange.dataprovider.MyDataProvider;
 import com.htc.orange.pages.AdminPage;
 import com.htc.orange.pages.AssignLeavePage;
 import com.htc.orange.pages.DashboardPage;
+import com.htc.orange.pages.LeaveConfigPage;
+import com.htc.orange.pages.LeaveEntitlementPage;
+import com.htc.orange.pages.LeaveListPage;
+import com.htc.orange.pages.LeaveReportPage;
 import com.htc.orange.pages.LoginPage;
 import com.htc.orange.pages.PIMAddEmployeePage;
 import com.htc.orange.pages.PIMAddReportPage;
 import com.htc.orange.pages.PIMPage;
 import com.htc.orange.pages.PIMSearchEmpPage;
 import com.htc.orange.pages.PIMSearchReportPage;
+import com.htc.orange.testcases.LeaveConfigTest;
 import com.htc.orange.utility.ExcelUtility;
 import com.htc.orange.utility.Snapshot;
 import com.htc.orange.utility.WebDriverFactory;
@@ -43,12 +48,16 @@ public class Base
 	protected PIMAddReportPage pimaddreport;
 	protected PIMSearchEmpPage pimsearchemp;
 	protected PIMSearchReportPage pimsearchreport;
+	protected LeaveConfigPage leaveconfig;
+	protected LeaveEntitlementPage leaveentitlementpage;
+	protected LeaveListPage leavelistpage;
+	protected LeaveReportPage leavereportpage;
 	
 	
 	//dp
 	
 
-	protected WebDriver driver1;
+	protected WebDriver driver;
     protected WebDriverWait wait;
     protected ConfigProperties prop;
     protected JavascriptExecutor js;

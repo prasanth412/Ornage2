@@ -142,6 +142,93 @@ public class MyDataProvider extends Base{
 		return testdataarray;
 		
 	}
+	
+	@DataProvider(name="LeaveConfig")
+	public Object[][] leaveConfig()
+	{
+		 prop=new ConfigProperties();
+		try
+		{
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "Leaveconfig");
+			testdataarray=ExcelUtility.getTableArray();
+			System.out.println(testdataarray);
+		
+		} 
+		catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return testdataarray;
+		
+	}
+	@DataProvider(name="LeaveEntitlement")
+	public Object[][] leaveEntitlement()
+	{
+		 prop=new ConfigProperties();
+		try
+		{
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "LeaveEntitlement");
+			testdataarray=ExcelUtility.getTableArray();
+			System.out.println(testdataarray);
+		
+		} 
+		catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return testdataarray;
+		
+	}
+	
+	@DataProvider(name="LeaveList")
+	public Object[][] leaveList()
+	{
+		 prop=new ConfigProperties();
+		try
+		{
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "LeaveList");
+			testdataarray=ExcelUtility.getTableArray();
+			System.out.println(testdataarray);
+		
+		} 
+		catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return testdataarray;
+		
+	}
+	@DataProvider(name="LeaveReport")
+	public Object[][] leaveReport()
+	{
+		 prop=new ConfigProperties();
+		try
+		{
+			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "LeaveReport");
+			testdataarray=ExcelUtility.getTableArray();
+			System.out.println(testdataarray);
+		
+		} 
+		catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return testdataarray;
+		
+	}
+	
 	@DataProvider
 	public Object[][] AssignLeaveProvider()
 	{
@@ -167,6 +254,7 @@ public class MyDataProvider extends Base{
 	@DataProvider
 	public Object[][] PIMProvider()
 	{
+		 prop=new ConfigProperties();
 		try {
 			ExcelUtility.setExcelFile(prop.fetchPropertyFromFile("dataExcelFileName"), "pim");
 			

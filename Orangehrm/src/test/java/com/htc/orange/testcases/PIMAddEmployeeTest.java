@@ -22,8 +22,8 @@ public class PIMAddEmployeeTest extends Base
 	@Test(dataProvider="LoginCredentials", dataProviderClass = MyDataProvider.class)
 	public void T001_loginPageTest(Map<String, String> testdata) throws Exception 
 	{
-	 String username=(String) testdata.get("username");
-	 String password=(String) testdata.get("password");
+	 String username=testdata.get("username");
+	 String password=testdata.get("password");
 	 dashboard=login.userLogin(username, password);
 	
 		
@@ -39,11 +39,14 @@ public class PIMAddEmployeeTest extends Base
 	@Test(dependsOnMethods="T002_DashBoardTest",dataProvider="PIMAddEmployee",dataProviderClass=MyDataProvider.class)
 	public void T003_addEmployeeTest(Map<String,String> testdata) throws Exception
 	{
+
 		pimaddemp.enterFirstName(testdata.get("FirstName"));
 		pimaddemp.enterMiddleName(testdata.get("MiddleName"));
 		pimaddemp.enterLastName(testdata.get("LastName"));
 		pimaddemp.enterEmployeeId(testdata.get("EmpId"));
-		pimaddemp.clickSave();
+		pimaddemp.clickUpload();
+		pimaddemp.uploadPhoto(testdata.get("Uploadphoto"));
+		//pimaddemp.clickSave();
 	}
 	
 

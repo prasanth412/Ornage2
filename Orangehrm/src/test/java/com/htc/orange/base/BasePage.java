@@ -27,11 +27,11 @@ public class BasePage extends Base
 	
     public BasePage()  {
 			fac=WebDriverFactory.getInstance();
-			driver1 =fac.getDriver();
-			wait = new WebDriverWait(driver1, Base.WEBDRIVER_WAIT_TIME);
+			driver =fac.getDriver();
+			wait = new WebDriverWait(driver, Base.WEBDRIVER_WAIT_TIME);
 			
 			prop=new ConfigProperties();
-			snap=new Snapshot(driver1);
+			snap=new Snapshot(driver);
 			maximizeBrowser();
 			
 		} 
@@ -40,7 +40,7 @@ public class BasePage extends Base
     protected void navigateToWebsite() 
     {
     	try {
-			driver1.get(prop.fetchPropertyFromFile("url"));
+			driver.get(prop.fetchPropertyFromFile("url"));
 			Thread.sleep(2000);
 		} catch (MyException | InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -57,7 +57,7 @@ public class BasePage extends Base
     	
     	
     	try {
-    		element = driver1.findElement(locator);
+    		element = driver.findElement(locator);
     	}
     	catch(Exception e)
     	{
@@ -73,7 +73,7 @@ public class BasePage extends Base
     {
     
     	try {
-    	list=driver1.findElements(locator);
+    	list=driver.findElements(locator);
     	}
     	catch(Exception e)
     	{
@@ -84,13 +84,13 @@ public class BasePage extends Base
     
     
     public void clickOnUsingJs(WebElement element) {
-    	executor= (JavascriptExecutor)driver1;
+    	executor= (JavascriptExecutor)driver;
     	executor.executeScript("arguments[0].click();", element);
     	}
     	public void type(String text, WebElement element) {
     		
     		
-    		((JavascriptExecutor) driver1).executeScript("arguments[0].scrollIntoView(true);", element);
+    		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     		element.clear();
     		element.sendKeys(text);
     		
@@ -100,7 +100,7 @@ public class BasePage extends Base
     
     protected void maximizeBrowser()
     {
-    	driver1.manage().window().maximize();
+    	driver.manage().window().maximize();
     }
     
    
@@ -108,7 +108,7 @@ public class BasePage extends Base
     {
     	
     	
-    	title=driver1.getTitle();
+    	title=driver.getTitle();
     
     	if(title==null)
     	throw new MyException("Unable to retrieve the page title");
@@ -121,14 +121,14 @@ public class BasePage extends Base
     
    protected void closeDriver()
    {
-	   driver1.quit();
+	   driver.quit();
 	  
    }
   
 
    protected WebDriver getDriver()
    {
-	   return driver1;
+	   return driver;
    }
    
    
@@ -148,27 +148,27 @@ public class BasePage extends Base
    
    protected void waitTillPageLoad()
    {
-	   driver1.manage().timeouts().pageLoadTimeout(Base.PAGELOAD_WAIT_TIME, TimeUnit.SECONDS);
+	   driver.manage().timeouts().pageLoadTimeout(Base.PAGELOAD_WAIT_TIME, TimeUnit.SECONDS);
    }
    
    
    
    protected void navigateForward()
    {
-	   driver1.navigate().forward();
+	   driver.navigate().forward();
    }
     
   
     protected void navigateBack()
     {
-    	driver1.navigate().back();
+    	driver.navigate().back();
     }
     
  
     
     protected void refresh()
     {
-    	driver1.navigate().refresh();
+    	driver.navigate().refresh();
     }
    
     
@@ -189,6 +189,23 @@ public class BasePage extends Base
 		}
     	element.sendKeys(value);
     }
+    protected void typeselect(By locator,String value) throws AWTException
+    {
+    
+		try {
+			element = getWebElement(locator);
+		} catch (MyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	element.sendKeys(value);
+    
+			Robot r=new Robot();
+			r.keyPress(KeyEvent.VK_DOWN);
+			r.keyRelease(KeyEvent.VK_DOWN);
+			r.keyPress(KeyEvent.VK_ENTER);
+			r.keyRelease(KeyEvent.VK_ENTER);
+		} 
     
     protected boolean checkElementVisible(By locator)
     {
@@ -206,7 +223,7 @@ public class BasePage extends Base
  	public void upload(By elementBy, String filename) throws MyException {
  		try {
  		File file = new File(filename);
- 		driver1.findElement(elementBy).sendKeys(file.getAbsolutePath());
+ 		driver.findElement(elementBy).sendKeys(file.getAbsolutePath());
  			Thread.sleep(2000);
  		} 
  		catch (Exception e) 
@@ -246,7 +263,7 @@ public class BasePage extends Base
     {
     	try 
     	{
-    		driver1.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -258,7 +275,7 @@ public class BasePage extends Base
     
     protected void dragAndDrop(WebElement fromElement,WebElement toElement)
     {
-    	Actions action=new Actions(driver1);
+    	Actions action=new Actions(driver);
     	action.dragAndDrop(fromElement, toElement);
     }
     
@@ -311,7 +328,7 @@ public class BasePage extends Base
     	try {
 			element=getWebElement(locator);
 		
-    	Actions action=new Actions(driver1);
+    	Actions action=new Actions(driver);
     	action.moveToElement(element).build().perform();
     	} catch (MyException e) {
 			// TODO Auto-generated catch block

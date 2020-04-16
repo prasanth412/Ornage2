@@ -20,6 +20,7 @@ public class PIMSearchEmpPage extends BasePage implements PIMSearchEmpPageObject
 	}
 	public void enterId(String text) throws Exception
 	{
+		waitTillElementFound(txtid);
 		clear(txtid);
 		type(txtid,text);
 		sleep();

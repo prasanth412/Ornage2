@@ -22,8 +22,8 @@ public class PIMSearchReportTest extends Base
 	@Test(dataProvider="LoginCredentials", dataProviderClass = MyDataProvider.class)
 	public void T001_loginPageTest(Map<String, String> testdata) throws Exception 
 	{
-	 String username=(String) testdata.get("username");
-	 String password=(String) testdata.get("password");
+	 String username=testdata.get("username");
+	 String password=testdata.get("password");
 	 dashboard=login.userLogin(username, password);
 	
 		

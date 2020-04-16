@@ -5,7 +5,10 @@ import com.htc.orange.pageobjects.LeaveConfigPageObjects;
 
 public class LeaveConfigPage extends BasePage implements LeaveConfigPageObjects
 {
-	
+	public LeaveConfigPage()
+	{
+		super();
+	}
 	public void enterLeaveTypeName(String text) throws Exception
 	{
 		clear(txtname);
@@ -15,12 +18,14 @@ public class LeaveConfigPage extends BasePage implements LeaveConfigPageObjects
 	}
 	public void clickAdd() throws Exception
 	{
+		waitTillElementFound(btnadd);
 		clickOn(btnadd);
 		sleep();
 		
 	}
 	public void clickSave() throws Exception
 	{
+		waitTillElementFound(btnsave);
 		clickOn(btnsave);
 		sleep();
 		

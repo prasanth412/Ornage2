@@ -46,6 +46,13 @@ public class PIMAddEmployeePage extends BasePage implements PIMAddEmployeePageOb
 		sleep();
 		
 	}
+	public void clickUpload( ) throws Exception
+	{
+		waitTillElementFound(upldphoto);
+		clickOn(upldphoto);
+		sleep();
+		
+	}
 	public void clickSave( ) throws Exception
 	{
 		className=this.getClass().getSimpleName();

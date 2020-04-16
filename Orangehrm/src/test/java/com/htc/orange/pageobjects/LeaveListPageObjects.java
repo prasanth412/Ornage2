@@ -14,7 +14,7 @@ public interface LeaveListPageObjects
 	By checkstatus= By.cssSelector("input#leaveList_chkSearchFilter_checkboxgroup_allcheck");
 	By txtemp= By.cssSelector("input#leaveList_txtEmployee_empName");
 	By drpdwnsubunit= By.cssSelector("select#leaveList_cmbSubunit");
-	By btnsearch= By.cssSelector("btnSearch");
+	By btnsearch= By.id("btnSearch");
 	
 
 }

@@ -8,12 +8,12 @@ public class PIMSearchReportPage extends BasePage implements PIMSearchReportPage
 
 	public PIMSearchReportPage()
 	{
-		
+		super();
 	}
 	public void enterReportName(String text) throws Exception
 	{
 		clear(txtreportname);
-		type(txtreportname,text);
+		typeselect(txtreportname,text);
 		sleep();
 		
 	}

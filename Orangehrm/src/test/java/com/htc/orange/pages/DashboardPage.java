@@ -146,7 +146,159 @@ public class DashboardPage extends BasePage implements DashBoardPageObjects {
 		
 	return new PIMAddReportPage();
 	}
+	public LeaveConfigPage clickLeave()
+	{
+		try 
+		{
+		waitTillElementFound(linkleave);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkleave);
+			
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveConfigPage();
+	}
+	public LeaveConfigPage clickLeaveConfig()
+	{
+		try 
+		{
+		waitTillElementFound(linkleaveconfig);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkleaveconfig);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveConfigPage();
+	}
 	
+	public LeaveConfigPage clickLeaveConfigleavetypes()
+	{
+		try 
+		{
+		waitTillElementFound(linkleaveconleavetype);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkleaveconleavetype);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveConfigPage();
+	}
+	public LeaveConfigPage clickadd()
+	{
+		try 
+		{
+		waitTillElementFound(btnadd);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(btnadd);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveConfigPage();
+	}
+
+
+	public LeaveEntitlementPage clickEntitlement()
+	{
+		try 
+		{
+		waitTillElementFound(linkentitlement);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkentitlement);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveEntitlementPage();
+	}
+
+	public LeaveEntitlementPage clickAddEntitlement()
+	{
+		try 
+		{
+		waitTillElementFound(linkaddleaveentitlement);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkaddleaveentitlement);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveEntitlementPage();
+	}
+	public LeaveListPage clickLeaveList()
+	{
+		try 
+		{
+		waitTillElementFound(linkleavelist);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkleavelist);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveListPage();
+	}
+
+	public LeaveReportPage clickReport()
+	{
+		try 
+		{
+		waitTillElementFound(linkleavereport);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkleavereport);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveReportPage();
+	}
+
+	public LeaveReportPage clickEntitlementReport()
+	{
+		try 
+		{
+		waitTillElementFound(linkleaveentitlementreport);
+		className=this.getClass().getSimpleName();
+		snap.capture(className);
+	    clickOn(linkleaveentitlementreport);
+		
+		} catch (MyException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	return new LeaveReportPage();
+	}
+
+
 
 	
 	

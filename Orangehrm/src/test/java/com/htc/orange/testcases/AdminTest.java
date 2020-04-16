@@ -16,15 +16,14 @@ public class AdminTest extends Base
 	@BeforeMethod
 	public void setup()
 	{
-		
 		login=new LoginPage();
 		
 	}
 	@Test(dataProvider="LoginCredentials", dataProviderClass = MyDataProvider.class)
-	public void T001_loginPageTest(Map<Object, Object> map) throws Exception 
+	public void T001_loginPageTest(Map<String, String> testdata) throws Exception 
 	{
-	 String username=(String) map.get("username");
-	 String password=(String) map.get("password");
+	 String username=testdata.get("username");
+	 String password=testdata.get("password");
 	 dashboard=login.userLogin(username, password);
 	
 		
@@ -63,6 +62,7 @@ public class AdminTest extends Base
 	{
 		adminpage=dashboard.clickAdmin();
 		adminpage.searchUser(testdata.get("Uname"));
+		
 		
 	}
 		
